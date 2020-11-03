@@ -1,0 +1,72 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "PORT=3000 vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:open": "CYPRESS_baseUrl=http://localhost:3000 cypress open",
+    "test:cy": "CYPRESS_baseUrl=http://localhost:3000 cypress run --headless",
+    "test:ci": "start-server-and-test start http://localhost:3000 test:cy",
+    "report:generate": "node scripts/generate-cucumber-report.js"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.8.3",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "cucumber-html-reporter": "^5.2.0",
+    "cypress": "^5.5.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress-failed-log": "^2.7.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "start-server-and-test": "^1.11.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+        "generate": true,
+        "outputFolder": "cypress/cucumber-json",
+        "screenshotsDirectory": "screenshots/",
+        "storeScreenshots": true,
+        "filePrefix": "",
+        "fileSuffix": ".feature"
+    }
+},
+  "nyc": {
+    "report-dir": "cypress/coverage",
+    "reporter": [
+      "text",
+      "json",
+      "html"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

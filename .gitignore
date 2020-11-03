@@ -1,0 +1,32 @@
+.DS_Store
+node_modules
+/dist
+.nyc_output
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# tests
+cypress/videos
+cypress/screenshots
+cypress/results
+cypress/cucumber-report
+cypress/cucumber-json
+cypress/logs
+cypress/reports
+cypress/coverage
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
