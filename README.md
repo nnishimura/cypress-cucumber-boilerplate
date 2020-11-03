@@ -1,6 +1,6 @@
 # cypress-cucumber-example
 
-Example setup for [Cypress](https://www.cypress.io/) + [Cucumber](https://cucumber.io/)
+Example setup for UI e2e/integration tests, powered by [Cypress](https://www.cypress.io/) and [Cucumber](https://cucumber.io/)
 
 ## Features
 * UI automation tests written with [cucumber](https://cucumber.io/) + [cypress](https://www.cypress.io/)
